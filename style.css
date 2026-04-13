@@ -17,6 +17,23 @@ main {
     margin: 0 auto;
 }
 
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.lang-switch {
+    font-size: 0.8rem;
+}
+
+.lang-switch a {
+    border-bottom: none;
+    cursor: pointer;
+    color: #0000ff;
+}
+
 header {
     margin-bottom: 50px;
 }
@@ -24,7 +41,7 @@ header {
 h1 {
     font-size: 1.5rem;
     letter-spacing: -1px;
-    margin-bottom: 10px;
+    margin-bottom: 0; 
     text-transform: uppercase;
 }
 
@@ -53,10 +70,29 @@ a:hover {
     color: #fff;
 }
 
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.pricing-table td {
+    padding: 5px 0;
+}
+
+.pricing-table td:last-child {
+    text-align: right;
+    font-weight: bold;
+}
+
 footer {
     margin-top: 60px;
     font-size: 0.8rem;
     opacity: 0.6;
+}
+
+.lang {
+    display: none;
 }
 
 @media (max-width: 600px) {

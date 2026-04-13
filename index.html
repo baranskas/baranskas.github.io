@@ -3,29 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Bar Systems: Building fast, lean, and minimalist websites for businesses.">
+    
     <title>bar systems</title>
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
         <header>
-            <h1>bar systems</h1>
-            <p>building fast, lean websites</p>
+            <div class="header-top">
+                <h1>bar systems</h1>
+                <nav class="lang-switch">
+                    <a href="#" onclick="switchLang('en')">EN</a> / 
+                    <a href="#" onclick="switchLang('lt')">LT</a>
+                </nav>
+            </div>
+            <p class="lang en">building fast, lean websites</p>
+            <p class="lang lt">kuriame greitas ir lengvas svetaines</p>
         </header>
 
         <section id="work">
-            <h2>Projects</h2>
+            <h2 class="lang en">Projects</h2>
+            <h2 class="lang lt">Projektai</h2>
             <ul>
                 <li>
-                    <a href="https://www.renataverslui.lt">Renata Verslui</a> — restaurant management services portfolio
+                    <a href="https://www.renataverslui.lt">Renata Verslui</a> 
+                    <span class="lang en">— restaurant management services portfolio</span>
+                    <span class="lang lt">— restoranų valdymo paslaugų portfolio</span>
                 </li>
             </ul>
         </section>
 
+        <section id="pricing">
+            <h2 class="lang en">Pricing</h2>
+            <h2 class="lang lt">Kainoraštis</h2>
+            <table class="pricing-table">
+                <tr>
+                    <td class="lang en">Simple website</td>
+                    <td class="lang lt">Paprasta svetainė</td>
+                    <td>€200 - €400</td>
+                </tr>
+                <tr>
+                    <td class="lang en">E-commerce store</td>
+                    <td class="lang lt">El. parduotuvė</td>
+                    <td>€1200+</td>
+                </tr>
+            </table>
+        </section>
+
         <section id="contact">
-            <h2>Contact me</h2>
-            <p>
+            <h2 class="lang en">Contact me</h2>
+            <h2 class="lang lt">Susisiekti</h2>
+            <p class="lang en">
                 all inquiry emails to <a href="mailto:web@barsystems.eu">web@barsystems.eu</a>
+            </p>
+            <p class="lang lt">
+                visi užklausų el. laiškai adresu <a href="mailto:web@barsystems.eu">web@barsystems.eu</a>
             </p>
         </section>
 
@@ -33,5 +70,18 @@
             <p>© 2026 — bar systems.</p>
         </footer>
     </main>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang').forEach(el => {
+                el.style.display = 'none';
+            });
+            document.querySelectorAll('.lang.' + lang).forEach(el => {
+                el.style.display = el.tagName === 'SPAN' || el.tagName === 'A' ? 'inline' : 'block';
+                if(el.tagName === 'TD') el.style.display = 'table-cell';
+            });
+        }
+        switchLang('en');
+    </script>
 </body>
 </html>
